@@ -88,6 +88,10 @@ footer p {
     padding-bottom: 1px;
 }
 
+footer p a {
+    text-decoration: none;
+}
+
 .date {
     font-size: 12px;
     font-style: italic;
