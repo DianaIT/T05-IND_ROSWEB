@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Aprendiendo ROSWEB</title>
+<meta charset="utf-8" />
+<meta name="description" content="ROS, upv, tecnologias interactivas, Proyecto de Robótica, ROSWeb">
+<meta author="Diana Herández Soler 2020">
+<link rel="stylesheet" href="./css/style.css" />
+<script src="https://static.robotwebtools.org/roslibjs/current/roslib.min.js"></script> 
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+<script src="./js/main.js"></script> 
+</head>
+<body>
+    <div id="vueApp">
+<header>
+    <h1>{{main_title}}</h1> <!--  Aprendiendo ROSWeb -->
+</header>
+<main>
+        <div class="form">
+            <h3> Connection <span class="date">24th March 2020</span></h3>
+           
+            <label for="rosbridgeAddress">ROSBridge Address:</label>
+            <input name="rosbridgeAddress" type="text" v-model="rosbridge_address" value="ws://" />
+            <br />
+            <button v-if="connected" @click="disconnect">Connected!</button>
+            <button v-else @click="connect">Connect!</button>
+        </div>
+        <div class="form">
+            <h3>{{ menu_title }} <span class="date">26th March 2020</span></h3>
+            <hr>
+            <p>Move the robot in a square of side:</p>
+            <input type="range" min="0" max="20" step="1" v-model.number="param_val" />
+            <button  @click="set_param" :disabled="loading || !connected  || service_busy" >Set param</button>
+            <button  @click="callMoveSquare" :disabled="loading || !connected  || service_busy">Move Square</button>
+            <p style="text-align: center;"> Distance: {{ param_val}}</p>
+            <hr>
+
+        </div>
+</main>
+<footer>
+
+   <p>🎹  con 🧡   por Diana Hernández</p>
+
+</footer>
+</div>
+</body>
+</html>
