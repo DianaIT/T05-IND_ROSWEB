@@ -11,7 +11,7 @@ let vueApp = new Vue({
         // page content
         loading: false,
         service_busy: false,
-        param_val: 0,
+        direction: 0,
         param_read_val: 0,
         service_response: ''
 
@@ -54,7 +54,7 @@ let vueApp = new Vue({
                 name: 'web_param'
              })
 
-             web_param.set(this.param_val)
+             web_param.set(this.direction)
              service_busy = false
              console.log('Reading param')
          },
@@ -75,19 +75,20 @@ let vueApp = new Vue({
                 service_busy = false
              }
         },
-        callMoveSquare: function(){
-            console.log('callMoveSquare called...')
+        start: function(direction){
+            this.direction = direction
+            console.log('start called with direction: %s'%(this.direction))
             this.service_busy = true
             this.service_response = ''
             // define the Service to call
             let service = new ROSLIB.Service({
                 ros: this.ros,
-                name: '/move_square',
-                serviceType: 'my_custom_service_msg/MyCustomServiceMessage'
+                name: '/jinko_navigation',
+                serviceType: 'jinko_service_msg/jinko_service_msg'
              })
             // define the request
             let request = new ROSLIB.ServiceRequest({
-                duration: this.param_val,
+                direction: this.direction,
             })
             // define a callback
             service.callService(request, (result) => {
