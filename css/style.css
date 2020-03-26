@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:100&display=swap');
 * {
     font-family: 'Roboto', sans-serif;
-    /* border: 1px solid grey; */ 
+   */* border: 1px solid grey; */
 }
 
 html {
@@ -17,6 +17,7 @@ body {
 header {
     border-bottom:1px solid lightgray;
     background-color: lightseagreen;
+    padding-bottom:1rem;
 }
 
 main {
@@ -25,8 +26,8 @@ main {
 
 header, main{
     width: 100%;
-    display: inline-flex;
-    justify-content: space-between;
+   /* display: inline-flex;
+    justify-content: space-between; */
 }
 
 header h1 {
@@ -37,16 +38,19 @@ header h1 {
     margin: 0 4rem;
 }
 
+.output {
+    padding: 1rem;
+}
+
 /* form */
 
 .form {
-    min-width:30%;
-    max-width:70%;
+    min-width:10%;
+    max-width:60%;
     align-self: center; 
     margin: 0 auto;
     padding: 1rem;
-    border: 1px solid grey;
-    
+    border: 1px solid grey;   
 }
 
 .form input {

@@ -6,8 +6,8 @@ let vueApp = new Vue({
         ros: null,
         rosbridge_address: 'ws://127.0.0.1:9090/',
         connected: false,
-        menu_title: 'Robot Control Area',
-        main_title: 'Aprendiendo ROSWeb',
+        menu_title: 'State Machine',
+        main_title: 'ROSWeb & State Machines',
         // page content
         loading: false,
         service_busy: false,
