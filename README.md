@@ -1,16 +1,13 @@
 # Prácticas de ROSWEB
 
-_Página de prueba para comunicación con el robot turtlebot3.
+_Práctica de ROSWeb dónde se inicia una máquina de estados implementada en ROS.
 Asignatura *Proyecto de Robótica* del grado en Tecnologias Interactivas
 del Campus de Gandia (Universitat Politècnica de València)_
 
-## Temas ✒️
+## Tecnologías ✒️
 
-_Librerias:_
-
-* **roslibjs**  ** 
-* **ros2djs**  ** 
-* **ros3djs**  ** 
+* **Aplicación con Vuejs**  ** 
+* **Máquina de estados con libreria smach de ROS**  ** 
 
 ## Expresiones de Gratitud 🎁
 
