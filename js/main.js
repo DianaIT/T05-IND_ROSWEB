@@ -11,7 +11,7 @@ let vueApp = new Vue({
         // page content
         loading: false,
         service_busy: false,
-        direction: 0,
+        direction: 2,
         param_read_val: 0,
         service_response: ''
 
@@ -77,7 +77,7 @@ let vueApp = new Vue({
         },
         start: function(direction){
             this.direction = direction
-            console.log('start called with direction: %s'%(this.direction))
+            console.log('start called with direction:' + this.direction)
             this.service_busy = true
             this.service_response = ''
             // define the Service to call
@@ -93,7 +93,8 @@ let vueApp = new Vue({
             // define a callback
             service.callService(request, (result) => {
                 this.service_busy = false
-                this.service_response = JSON.stringify(result)
+                this.service_response = result.success
+                console.log('result', this.service_response)
             }, (error) => {
                 this.service_busy = false
                 console.error(error)

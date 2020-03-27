@@ -14,40 +14,36 @@
     <div id="vueApp">
 <header>
     <h1>{{main_title}}</h1> <!--  Aprendiendo ROSWeb -->
+    <img src="./image/logo_jinkorobotics.png" style="width:30%;padding-top:.3rem;">
 </header>
+
 <main>
-        <div class="form">
-            <label for="rosbridgeAddress">ROSBridge Address:</label>
-            <input name="rosbridgeAddress" type="text" v-model="rosbridge_address" value="ws://" />
-            <br />
-            <button v-if="connected" @click="disconnect">Connected!</button>
-            <button v-else @click="connect">Connect!</button>
-        </div>
-        <div class="form">
-            <h3>{{ menu_title }} <span class="date">26th March 2020</span></h3>
-            <section style="display:flex;">
-            <img src="./image/stateMachine.png" width="30%" alt="maquina de estados" />
-            <section>
-               
-                State machine starting in initial state 'A',<br />
-                Would you like to go down or left? <br />
-           <button :disabled="!connected" @click="start(1)" style="float:left;">LEFT</button>
-           <button :disabled="!connected" @click="start(0)" style="float:left;">DOWN</button>
-     
-           <br />
-           <br />
-           <br />
-            
-           <div class="output">
-            State machine transitioning 'A':'1'-->'B' <br />
-            State machine transitioning 'B':'1'-->'C' <br />
-            State machine transitioning 'C':'1'-->'D' <br />
-            State machine transitioning 'D':'1'-->'A' <br />
-            State machine transitioning 'A':'1'-->'B' <br />
-           </div>
-        </section>
-    </section>
-        </div>
+    <div class="form">
+        <label style="font-size:1em;" for="rosbridgeAddress">ROSBridge Address:</label>
+        <br />
+        <input  style="font-size:.9em;" name="rosbridgeAddress" type="text" v-model="rosbridge_address" value="ws://" />
+        <br />
+        <button v-if="connected" @click="disconnect">Connected!</button>
+        <button v-else @click="connect">Connect!</button>
+        <br />
+        <h3>{{ menu_title }}</h3>
+        <section  style="font-size:1em;">
+        <img style="width:30%;" src="./image/stateMachine.png" alt="maquina de estados" /><br/>
+            State machine starting in initial state 'A',<br />
+            Would you like to go down or left? <br />
+       <button :disabled="!connected" @click="start(1)" style="float:left;">LEFT</button>
+       <button :disabled="!connected" @click="start(0)" style="float:left;">DOWN</button>
+       <br />
+       <br />
+       
+       <div class="output" v-if="this.direction !== 2" style="font-size:.9em;"> 
+        start called with direction:  
+        <span v-if="this.direction == 1">RIGHT</span>  
+        <span v-else>DOWN</span>
+       <br /> Result: {{ service_response }} <br >
+       </div>
+    </div>
+
 </main>
 <footer>
 
