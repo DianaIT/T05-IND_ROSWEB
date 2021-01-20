@@ -4,7 +4,7 @@ _Práctica de ROSWeb dónde se inicia una máquina de estados implementada en RO
 Asignatura *Proyecto de Robótica* del grado en Tecnologias Interactivas
 del Campus de Gandia (Universitat Politècnica de València)_
 
-![screenshot](https://github.com/DianaIT/T05-IND_ROSWEB/blob/master/image/stateMachine.png)
+![screenshot](https://github.com/DianaIT/T05-IND_ROSWEB/blob/master/image/statemachine.JPG)
 ## Tecnologías ✒️
 
 * **Aplicación con Vuejs**  ** 
